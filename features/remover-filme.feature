@@ -1,18 +1,22 @@
 #language:pt
 
+@login
 Funcionalidade: Remover filme
-Para que eu possa manter o catálogo atualizado
-Sendo um gestor de catálogo que encontrou um título cancelado/indesejado ou que não tem uma boa aceitação pelo público
-Posso remover este item
+    Para que eu possa manter o catálogo atualizado
+    Sendo um gestor de catálogo que encontrou um título cancelado/indesejado ou que não tem uma boa aceitação pelo público
+    Posso remover este item
 
-Cenário: Excluir filme
-Dado que "Dragon Ball Evolution" faz parte do catálogo
-Quando eu solicito a exclusão
-E eu confirmo a solicitação
-Então este item deve ser removido do catálogo
+    
+Cenário: Confirmar exclusão
 
-Cenário: Desistir da exclusão
-Dado que "10 coisas que eu odeio em você" faz parte do catálogo
-Quando eu solicito a exclusão
-Mas cancelo a solicitação
-Então este item deve permanecer no catálogo
+    Dado que "dbz" faz parte do catálogo
+    Quando eu solicito a exclusão
+    E eu confirmo a solicitação
+    Então este item deve ser removido do catálogo
+
+@rm_movie
+    Cenário: Cancelar exclusão
+    Dado que "10_coisas" faz parte do catálogo
+    Quando eu solicito a exclusão
+    Mas cancelo a solicitação
+    Então este item deve permanecer no catálogo
